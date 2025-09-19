@@ -6,8 +6,32 @@
 - **Features**: Real-time conversion, auto clipboard copy, multiple formatting options, responsive design
 
 ## URLs
-- **Live Tool**: https://3000-i99y5nk63x8akw0v317yu-6532622b.e2b.dev/
-- **Health Check**: https://3000-i99y5nk63x8akw0v317yu-6532622b.e2b.dev/
+- **GitHub Repository**: https://github.com/markans/replace-new-lines-with-commas
+- **Live Demo**: https://3000-i99y5nk63x8akw0v317yu-6532622b.e2b.dev/
+
+## 🚀 Quick Start
+
+### Option 1: Run Locally (Recommended)
+See **[LOCALHOST_SETUP.md](LOCALHOST_SETUP.md)** for complete local development guide.
+
+**Quick Start:**
+```bash
+# Clone and setup
+git clone https://github.com/markans/replace-new-lines-with-commas.git
+cd replace-new-lines-with-commas
+npm install
+
+# Start development server
+npm run dev
+# Access at: http://localhost:5173/
+```
+
+**Or use the quick start scripts:**
+- **macOS/Linux**: `./start.sh`
+- **Windows**: `start.bat`
+
+### Option 2: Use Live Demo
+Access the tool directly at: https://3000-i99y5nk63x8akw0v317yu-6532622b.e2b.dev/
 
 ## Currently Completed Features
 ✅ **Real-time Text Conversion**: 
@@ -100,21 +124,46 @@ Apple, Banana, Cherry, Date
 4. **Optional**: Implement additional separator options based on user feedback
 
 ## Development Commands
+
+### Local Development
 ```bash
-# Start development server
+# Quick start (hot reload)
+npm run dev                    # Start at http://localhost:5173/
+npm run dev:3000              # Start at http://localhost:3000/
+npm run dev:network           # Allow network access (mobile testing)
+
+# Production preview
+npm run build                 # Build for production
+npm run preview              # Preview build at http://localhost:8788/
+npm run start                # Build + preview in one command
+
+# Utility commands
+npm run clean                # Clean build artifacts
+npm run reinstall            # Fresh dependency install
+```
+
+### Quick Start Scripts
+```bash
+# macOS/Linux
+./start.sh
+
+# Windows
+start.bat
+```
+
+### Cloudflare Deployment
+```bash
+npm run deploy              # Deploy to Cloudflare Pages
+npm run cf-typegen         # Generate TypeScript types
+```
+
+### Server Management (Sandbox/Production)
+```bash
+# PM2 commands (for server environments)
 npm run build && pm2 start ecosystem.config.cjs
-
-# Check status
-pm2 list
-
-# View logs
-pm2 logs --nostream
-
-# Stop service
-pm2 delete webapp
-
-# Deploy to Cloudflare Pages (requires setup)
-npm run deploy
+pm2 list                   # Check status
+pm2 logs --nostream       # View logs
+pm2 delete webapp         # Stop service
 ```
 
 ---
